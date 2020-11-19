@@ -1,21 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEngine.UI;
+
 
 public class LeftCustomisationBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void SetText(string text)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Console.Clear();
-
-        Console.WriteLine("Standard Numeric Format Specifiers");
+        SkinColorText txt = transform.Find("Text").GetComponent<SkinColorText>();
+        txt.text = text;
     }
 }
