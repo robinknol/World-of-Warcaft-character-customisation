@@ -7,7 +7,10 @@ public class ButtonPress : MonoBehaviour
 {
     private Button nameRandomizer;
     private Text charatherName;
-    public List<string> randomNames = new List<string>();
+    public List<string> randomNamesMale = new List<string>();
+    public List<string> randomNamesFemale = new List<string>();
+
+    public bool isMale = true;
 
     private string fileName = "data.json";
     private string path;
@@ -26,11 +29,17 @@ public class ButtonPress : MonoBehaviour
         path = Application.persistentDataPath + "/" + fileName;
         Debug.Log(path);
 
-        for (int i = 0; i < randomNames.Count; i++)
+        for (int i = 0; i < randomNamesMale.Count; i++)
         {
             PlayerName n01 = new PlayerName();
-            n01.name = randomNames[i];
-            gameData.userName.Add(n01);
+            n01.name = randomNamesMale[i];
+            gameData.male.Add(n01);
+        }
+        for (int i = 0; i < randomNamesFemale.Count; i++)
+        {
+            PlayerName n02 = new PlayerName();
+            n02.name = randomNamesFemale[i];
+            gameData.female.Add(n02);
         }
 
         SaveData();
@@ -46,8 +55,16 @@ public class ButtonPress : MonoBehaviour
                 JsonWrapper wrapper = JsonUtility.FromJson<JsonWrapper>(contents);
                 gameData = wrapper.GameData;
 
-                        charatherName.text = gameData.userName[num].name;
-                        Debug.Log(gameData.userName[num].name);
+                if (isMale == true)
+                {
+                    charatherName.text = gameData.male[num].name;
+                    Debug.Log(gameData.male[num].name);
+                }
+                else
+                {
+                    charatherName.text = gameData.female[num].name;
+                    Debug.Log(gameData.female[num].name);
+                }
             }
             else
             {
@@ -71,7 +88,14 @@ public class ButtonPress : MonoBehaviour
 
     private void Randomizer()
     {
-        num = Random.Range(0, randomNames.Count);
+        if (isMale == true)
+        {
+            num = Random.Range(0, randomNamesMale.Count);
+        }
+        else
+        {
+            num = Random.Range(0, randomNamesFemale.Count);
+        }
         Debug.Log(num);
         ReadData();
     }

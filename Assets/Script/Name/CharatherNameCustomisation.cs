@@ -6,8 +6,8 @@ using System.Text.RegularExpressions;
 
 public class CharatherNameCustomisation : MonoBehaviour
 {
-    string regexCap = @"[A-Z]";
-    string regexLow = @"[a-z]";
+    private string regexCap = @"[A-Z]";
+    private string regexLow = @"[a-z]";
     RegexOptions options = RegexOptions.Multiline;
 
     private Text charatherName;

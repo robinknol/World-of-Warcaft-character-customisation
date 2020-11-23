@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public List<PlayerName> userName = new List<PlayerName>();
+    public List<PlayerName> male = new List<PlayerName>();
+    public List<PlayerName> female = new List<PlayerName>();
 }
 
