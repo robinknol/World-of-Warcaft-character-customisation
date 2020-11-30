@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonPress : MonoBehaviour
+public class ButtonNameRandomizer : MonoBehaviour
 {
     private Button nameRandomizer;
     private Text charatherName;
@@ -11,7 +11,7 @@ public class ButtonPress : MonoBehaviour
     public List<string> randomNamesFemale = new List<string>();
 
     public bool isMale = true;
-
+    private string userName = "username";
     private string fileName = "data.json";
     private string path;
     private int num;
@@ -22,9 +22,7 @@ public class ButtonPress : MonoBehaviour
         nameRandomizer = this.GetComponent<Button>();
         nameRandomizer.onClick.AddListener(Randomizer);
 
-        charatherName = GameObject.FindGameObjectWithTag("username").GetComponent<Text>();
-
-        charatherName.text = "";
+        charatherName = GameObject.FindGameObjectWithTag(userName).GetComponent<Text>();
 
         path = Application.persistentDataPath + "/" + fileName;
         Debug.Log(path);
@@ -45,6 +43,15 @@ public class ButtonPress : MonoBehaviour
         SaveData();
     }
 
+    private void test()
+    {
+        for (int i = 0; i < randomNamesMale.Count; i++)
+        {
+            PlayerName n01 = new PlayerName();
+            n01.name = randomNamesMale[i];
+            gameData.male.Add(n01);
+        }
+    }
     void ReadData()
     {
         try

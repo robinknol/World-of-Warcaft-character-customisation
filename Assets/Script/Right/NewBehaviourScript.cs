@@ -22,14 +22,14 @@ public class CharatherCustomizer : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (images[images.Count - 1].transform.localPosition.y != 10)
             {
                 Position(true);
             }
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (images[0].transform.localPosition.y != 10)
             {
@@ -48,6 +48,7 @@ public class CharatherCustomizer : MonoBehaviour
                 things[i].SetActive(true);
             }
         }
+        StartCoroutine(Timer(5));
     }
 
     private void Position(bool up)
@@ -73,5 +74,10 @@ public class CharatherCustomizer : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    IEnumerator Timer(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
     }
 }
