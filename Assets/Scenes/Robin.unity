@@ -2628,7 +2628,12 @@ MonoBehaviour:
   - Elena
   - Sylaena
   - Caira
-  isMale: 1
+  - Nodine
+  - Tyri
+  - Medana
+  - Denalonis
+  - Elilan
+  isMale: 0
 --- !u!1 &1395451426
 GameObject:
   m_ObjectHideFlags: 0
