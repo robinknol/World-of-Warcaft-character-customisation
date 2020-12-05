@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Timeline;
 
-public class NewBehaviourScript : MonoBehaviour
+public class CharacterCustomizer : MonoBehaviour
 {
     private float yPos = 55;
     private int diffrence = 45;
