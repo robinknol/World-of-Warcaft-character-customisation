@@ -24,6 +24,7 @@ public class CharatherCustomizer : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(images.Count);
         numberCounter.text = numberTest.ToString();
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -41,7 +42,7 @@ public class CharatherCustomizer : MonoBehaviour
                 Position(false);
             }
         }
-
+        
         for(int i = 0; i < images.Count; i++)
         {
             if(images[i].transform.localPosition.y == 10)
@@ -52,17 +53,20 @@ public class CharatherCustomizer : MonoBehaviour
                 }
                 things[i].SetActive(true);
             }
+            
 
             if (images[i].transform.localPosition.y >= 235 || images[i].transform.localPosition.y <= -260)
             {
                 images[i].enabled = false;
+                //Debug.Log(images[i] + " y-pos = " + images[i].transform.localPosition.y + " enabled = " + images[i].enabled);
             }
             else
             {
                 images[i].enabled = true;
+                //Debug.Log(images[i] + " y-pos = " + images[i].transform.localPosition.y + " enabled = " + images[i].enabled);
             }
         }
-        StartCoroutine(Timer(5));
+        //StartCoroutine(Timer(5));
     }
 
     private void Position(bool up)
