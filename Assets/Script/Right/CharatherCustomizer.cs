@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Timeline;
 
-public class CharacterCustomizer : MonoBehaviour
+public class CharatherCustomizer : MonoBehaviour
 {
     private float yPos = 55;
-    private int diffrence = 45;
+    private int numberTest = 1;
+    public int diffrence;
+    public Text numberCounter;
     public List<Image> images;
     public List<GameObject> things;
     private void Start()
@@ -22,10 +23,13 @@ public class CharacterCustomizer : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        Debug.Log(images.Count);
+        numberCounter.text = numberTest.ToString();
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (images[images.Count - 1].transform.localPosition.y != 10)
             {
+                numberTest += 1;
                 Position(true);
             }
         }
@@ -33,10 +37,11 @@ public class CharacterCustomizer : MonoBehaviour
         {
             if (images[0].transform.localPosition.y != 10)
             {
+                numberTest -= 1;
                 Position(false);
             }
         }
-
+        
         for(int i = 0; i < images.Count; i++)
         {
             if(images[i].transform.localPosition.y == 10)
@@ -47,7 +52,20 @@ public class CharacterCustomizer : MonoBehaviour
                 }
                 things[i].SetActive(true);
             }
+            
+
+            if (images[i].transform.localPosition.y >= 235 || images[i].transform.localPosition.y <= -260)
+            {
+                images[i].enabled = false;
+                //Debug.Log(images[i] + " y-pos = " + images[i].transform.localPosition.y + " enabled = " + images[i].enabled);
+            }
+            else
+            {
+                images[i].enabled = true;
+                //Debug.Log(images[i] + " y-pos = " + images[i].transform.localPosition.y + " enabled = " + images[i].enabled);
+            }
         }
+        //StartCoroutine(Timer(5));
     }
 
     private void Position(bool up)
@@ -73,5 +91,10 @@ public class CharacterCustomizer : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    IEnumerator Timer(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
     }
 }

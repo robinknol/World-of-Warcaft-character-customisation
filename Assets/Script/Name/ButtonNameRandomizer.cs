@@ -27,12 +27,21 @@ public class ButtonNameRandomizer : MonoBehaviour
         path = Application.persistentDataPath + "/" + fileName;
         Debug.Log(path);
 
+        RandomNameJsonSaver();
+
+        SaveData();
+    }
+
+    private void RandomNameJsonSaver()
+    {
+
         for (int i = 0; i < randomNamesMale.Count; i++)
         {
             PlayerName n01 = new PlayerName();
             n01.name = randomNamesMale[i];
             gameData.male.Add(n01);
         }
+
         for (int i = 0; i < randomNamesFemale.Count; i++)
         {
             PlayerName n02 = new PlayerName();
@@ -40,17 +49,17 @@ public class ButtonNameRandomizer : MonoBehaviour
             gameData.female.Add(n02);
         }
 
-        SaveData();
-    }
-
-    private void test()
-    {
-        for (int i = 0; i < randomNamesMale.Count; i++)
+        /*
+        for (int i = 0, j = 0; i < randomNamesMale.Count && j < randomNamesFemale.Count; i++, j++)
         {
             PlayerName n01 = new PlayerName();
+            PlayerName n02 = new PlayerName();
             n01.name = randomNamesMale[i];
             gameData.male.Add(n01);
+            n02.name = randomNamesFemale[j];
+            gameData.female.Add(n02);
         }
+        */
     }
     void ReadData()
     {
