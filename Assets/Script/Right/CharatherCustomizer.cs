@@ -23,7 +23,7 @@ public class CharatherCustomizer : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(images.Count);
+        
         numberCounter.text = numberTest.ToString();
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
