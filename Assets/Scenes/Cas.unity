@@ -4197,7 +4197,7 @@ GameObject:
   - component: {fileID: 1590652031}
   - component: {fileID: 1590652030}
   m_Layer: 5
-  m_Name: LeftUI
+  m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

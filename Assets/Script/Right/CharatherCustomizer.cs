@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class CharatherCustomizer : MonoBehaviour
 {
-    private float yPos = 55;
+    private float xPos = 666;
+    private float yPos = 110;
     private int numberTest = 1;
     public int diffrence;
     public Text numberCounter;
-    public List<Image> images;
+    public List<RawImage> images;
     public List<GameObject> things;
     private void Start()
     {
@@ -17,13 +18,13 @@ public class CharatherCustomizer : MonoBehaviour
         {
             yPos -= diffrence;
 
-            images[i].transform.localPosition = new Vector2(465, yPos);
+            images[i].transform.localPosition = new Vector2(xPos, yPos);
         }
     }
 
     private void Update()
     {
-        
+        Debug.Log(images.Count);
         numberCounter.text = numberTest.ToString();
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -54,7 +55,7 @@ public class CharatherCustomizer : MonoBehaviour
             }
             
 
-            if (images[i].transform.localPosition.y >= 235 || images[i].transform.localPosition.y <= -260)
+            if (images[i].transform.localPosition.y >= 210 || images[i].transform.localPosition.y <= -190)
             {
                 images[i].enabled = false;
                 //Debug.Log(images[i] + " y-pos = " + images[i].transform.localPosition.y + " enabled = " + images[i].enabled);
@@ -78,7 +79,7 @@ public class CharatherCustomizer : MonoBehaviour
                     yPos = images[i].transform.localPosition.y;
                     yPos += diffrence;
 
-                    images[i].transform.localPosition = new Vector2(465, yPos);
+                    images[i].transform.localPosition = new Vector2(xPos, yPos);
                 }
                 break;
             case false:
@@ -87,7 +88,7 @@ public class CharatherCustomizer : MonoBehaviour
                     yPos = images[i].transform.localPosition.y;
                     yPos -= diffrence;
 
-                    images[i].transform.localPosition = new Vector2(465, yPos);
+                    images[i].transform.localPosition = new Vector2(xPos, yPos);
                 }
                 break;
         }
