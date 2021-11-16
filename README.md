@@ -2,12 +2,12 @@
 
 Team:
 
-Cas de Graaff
-Robin Knol
-Wim
-Lennard
-Delila
-Finley
+- Cas de Graaff
+- Robin Knol
+- Wim
+- Lennard
+- Delila
+- Finley
 
 ## Ontwerp
 
