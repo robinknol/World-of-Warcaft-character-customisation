@@ -1,4 +1,4 @@
-Special Input Output
+Special Input Output 1
 
 Team:
 
@@ -31,6 +31,3 @@ Hardware:
 Scrum:
 
 Trello: https://trello.com/b/jhLF4y03/world-of-warcraft-customisation
-
-Github: 
- 
