@@ -2,8 +2,8 @@
 
 Team:
 
-- Cas de Graaff
-- Robin Knol
+- Cas 
+- Robin 
 - Wim
 - Lennard
 - Delila
