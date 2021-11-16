@@ -1,8 +1,8 @@
-Special Input Output 1
+## Special Input Output 1
 
-## Team:
+Team:
 
-# Cas de Graaff
+Cas de Graaff
 Robin Knol
 Wim
 Lennard
