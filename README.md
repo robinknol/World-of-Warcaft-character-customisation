@@ -13,8 +13,6 @@ Team:
 
 10 seconden gameplay van de character customization menu van World of Warcraft.
 
-Onderzoek
-
 ## Engine:
 
 Unity 2019.4.14f1 (Virtual Studio Code 2019)
